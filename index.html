@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <head>
-	<title>TroisOSC</title>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-	<script type="text/javascript" src="audio.js"></script>
-	<script type="text/javascript" src="ui.js"></script>
-	<script type="text/javascript">
-		var aud = TOSC_Audio();
-		var ui = TOSC_UI(jQuery, aud);
-	</script>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="stylesheets/foundation.min.css">
+	<style type="text/css">
+		h1
+		{
+			text-align: center;
+			font-size: 800%;
+		}
+	</style>
 </head>
 <body>
+	<div class="row">
+		<div class="ten columns centered">
+			<h1 class="subheader">♪</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="one columns offset-by-two">
+			<label class="right inline">Attack</label>
+		</div>
+		<div class="one columns">
+			<input id="attack" type="text" />
+		</div>
+		<div class="one columns">
+			<label class="right inline">Release</label>
+		</div>
+		<div class="one columns">
+			<input id="release" type="text" />
+		</div>
+		<div class="one columns">
+			<label class="right inline">Waveform</label>
+		</div>
+		<div class="three columns">
+			<form class="custom">
+				<select id="waveform">
+					<option value="0">Sine</option>
+					<option value="1">Square</option>
+					<option value="2">Sawtooth</option>
+					<option value="3">Triangle</option>
+				</select>
+			</form>
+		</div>
+		<div class="one columns">
+		</div>
+	</div>
+	<div class="row">
+		<div class="six columns centered">
+			<img src="synthpatel.png" />
+		</div> 
+	</div>
 
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/foundation.min.js"></script>
+	<script src="javascripts/jquery.foundation.forms.js"></script>
+	<script type="text/javascript" src="3osc.js"></script>
 </body>
