@@ -30,8 +30,8 @@ keys = {
 	188: "C5"
 }
 
-attack = 0.30;
-release = 0.30;
+attack = 10;
+release = 40;
 waveform = 0;
 
 ctx = new webkitAudioContext();
@@ -80,7 +80,7 @@ $(function(){
 
 		var adsr = ctx.createGain();
 		adsr.gain.setValueAtTime(0, ctx.currentTime);
-		adsr.gain.linearRampToValueAtTime(1, ctx.currentTime + attack);
+		adsr.gain.linearRampToValueAtTime(1, ctx.currentTime + (attack / 100.0));
 
 		osc.connect(adsr);
 		adsr.connect(ctx.destination);
@@ -100,7 +100,7 @@ $(function(){
 		for(var i = 0; i < oscillators.length; i++){
 			var osc = oscillators[i][0];
 			var adsr = oscillators[i][1];
-			adsr.gain.linearRampToValueAtTime(0, ctx.currentTime + release);
+			adsr.gain.linearRampToValueAtTime(0, ctx.currentTime + (release / 100.0));
 			osc.stop(ctx.currentTime + release);
 		}
 		notes[playingNote] = [];
@@ -108,12 +108,16 @@ $(function(){
 		$("h1").html(currentNotesStr());
 	});
 
-	$("#attack").change(function(){
-		attack = parseFloat($(this).val());
+	$("#attack").knob({
+		"change": function(v){
+			attack = v;
+		}
 	});
 
-	$("#release").change(function(){
-		release = parseFloat($(this).val());
+	$("#release").knob({
+		"change": function(v){
+			attack = v;
+		}
 	});
 
 	$("#waveform").change(function(){

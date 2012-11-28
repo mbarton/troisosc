@@ -8,6 +8,10 @@
 			text-align: center;
 			font-size: 800%;
 		}
+		h2
+		{
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
@@ -17,20 +21,25 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="one columns offset-by-two">
-			<label class="right inline">Attack</label>
+		<div class="one columns"></div>
+		<div class="three columns">
+			<h2>Attack</h2>
 		</div>
-		<div class="one columns">
-			<input id="attack" type="text" />
+		<div class="three columns">
+			<h2>Release</h2>
 		</div>
-		<div class="one columns">
-			<label class="right inline">Release</label>
+		<div class="three columns">
+			<h2>Waveform</h2>
 		</div>
-		<div class="one columns">
-			<input id="release" type="text" />
+		<div class="one columns"></div>
+	</div>
+	<div class="row">
+		<div class="one columns"></div>
+		<div class="three columns">
+			<input id="attack" type="text" data-min="1" data-max="100" data-displayInput="false" />
 		</div>
-		<div class="one columns">
-			<label class="right inline">Waveform</label>
+		<div class="three columns">
+			<input id="release" type="text" data-min="1" data-max="100" data-displayInput="false" />
 		</div>
 		<div class="three columns">
 			<form class="custom">
@@ -42,8 +51,7 @@
 				</select>
 			</form>
 		</div>
-		<div class="one columns">
-		</div>
+		<div class="one columns"></div>
 	</div>
 	<div class="row">
 		<div class="six columns centered">
@@ -54,5 +62,6 @@
 	<script src="javascripts/jquery.js"></script>
 	<script src="javascripts/foundation.min.js"></script>
 	<script src="javascripts/jquery.foundation.forms.js"></script>
+	<script src="javascripts/jquery.knob.js"></script>
 	<script type="text/javascript" src="3osc.js"></script>
 </body>
