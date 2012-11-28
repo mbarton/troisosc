@@ -120,7 +120,9 @@ $(function(){
 		}
 	});
 
-	$("#waveform").change(function(){
-		waveform = $(this).val();
+	$("#waveform a").click(function(){
+		$("#waveform li").removeClass("active");
+		waveform = $("#waveform a").index(this);
+		$(this).parent().addClass("active");
 	});
 });
